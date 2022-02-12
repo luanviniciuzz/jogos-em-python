@@ -8,12 +8,9 @@ def jogar():
     print("*********************************")
 
     ## Escolha a palavra
-    palavra_secreta = "vaca"
+    palavra_secreta = "banana"
 
-    letras_acertadas = []
-    
-    for n in palavra_secreta :
-        letras_acertadas.append("_")
+    letras_acertadas = ["_" for n in palavra_secreta]
 
     print(letras_acertadas)
 
