@@ -5,24 +5,9 @@ from struct import pack
 
 
 def jogar():
-    print("*********************************")
-    print("***Bem vindo ao jogo da Forca!***")
-    print("*********************************")
 
-    arquivo = open("palavras.txt", "r")
-    palavras = []
-
-    for linha in arquivo:
-        linha = linha.strip()
-        palavras.append(linha)
-
-    arquivo.close()
-
-    numero = randrange(len(palavras))
-
-
-    ## Escolhe a palavra
-    palavra_secreta = palavras[numero]
+    imprime_mensagem_abertura()
+    palavra_secreta = carrega_palavra_secreta()
     
 
     letras_acertadas = ["_" for n in palavra_secreta]
@@ -59,3 +44,25 @@ def jogar():
 ##roda como função principal 
 if(__name__ == "__main__"):
     jogar() 
+
+def imprime_mensagem_abertura():
+    print("*********************************")
+    print("***Bem vindo ao jogo da Forca!***")
+    print("*********************************")
+
+def carrega_palavra_secreta():
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    numero = randrange(len(palavras))
+
+
+    ## Escolhe a palavra
+    palavra_secreta = palavras[numero]
+    return palavra_secreta
