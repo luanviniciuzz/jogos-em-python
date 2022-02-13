@@ -1,5 +1,7 @@
 from operator import index
+from random import random, randrange
 from struct import pack
+
 
 
 def jogar():
@@ -7,8 +9,21 @@ def jogar():
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
-    ## Escolha a palavra
-    palavra_secreta = "banana"
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    numero = randrange(len(palavras))
+
+
+    ## Escolhe a palavra
+    palavra_secreta = palavras[numero]
+    
 
     letras_acertadas = ["_" for n in palavra_secreta]
 
@@ -31,7 +46,7 @@ def jogar():
         else:
             erros = erros + 1
         
-        enforcou = erros == 6
+        enforcou = erros == 10
         acertou = "_" not in letras_acertadas
         print(letras_acertadas)
 
