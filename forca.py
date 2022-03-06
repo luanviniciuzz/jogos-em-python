@@ -41,10 +41,6 @@ def jogar():
         print("Você perdeu")
     print("Fim do jogo")
 
-##roda como função principal 
-if(__name__ == "__main__"):
-    jogar() 
-
 def imprime_mensagem_abertura():
     print("*********************************")
     print("***Bem vindo ao jogo da Forca!***")
@@ -66,3 +62,7 @@ def carrega_palavra_secreta():
     ## Escolhe a palavra
     palavra_secreta = palavras[numero]
     return palavra_secreta
+
+##roda como função principal 
+if(__name__ == "__main__"):
+    jogar() 
